@@ -35,6 +35,9 @@ var server = ws.createServer(function (connection) {
 		textObj.msg = connection.nickname + '已经离开';
 		broadcast(textObj);
 	})
+	connection.on("error", function (err) {
+		console.log(err);
+	})
 })
 server.listen(8081)
 
