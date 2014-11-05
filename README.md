@@ -10,8 +10,14 @@ Try to set the form of message to JSON, to distinguish system message, other's m
 尝试了修改消息格式为JSON，能区分系统和其他人和自己的发言   
 
 ###玩耍方法(How to use it)###
-do command in terminal: >node chat.js  
-and access in browser: localhost:8080  
+type command in terminal: >node chat.js  
+and view this address in browser: localhost:8080  
 在命令行输入：node chat.js   
 然后打开浏览器访问：localhost:8080   
+    
+    
+###修改历史(Update History)###
+2014.11.05     
+add error handler for websocket server to avoid exiting when one user logging out    
+增加了error消息处理避免某个用户退出时引发websocketserver退出
 
