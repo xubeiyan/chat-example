@@ -22,11 +22,13 @@ var wss = new WebSocket.Server({port: 8081}),
 		});
 	};
 
-wss.on('connetion', function (ws) {
+wss.on('connection', function (ws) {
+	console.log(ws);
 	wss.on('message', function (message) {
 		if (message.substr(0, 4) != 'I am') {
 			console.log('not "I am" message');
 			// TODO: kick it
+			ws.close(4001, 'not a user!');
 			return;
 		}
 		
@@ -42,6 +44,10 @@ wss.on('connetion', function (ws) {
 	});
 	
 });
+
+wss.on('open', function () {
+	console.log('someone');
+})
 // 监听在8080和8081端口上
 /*
 wsHandler = function (connection) {
