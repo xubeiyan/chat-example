@@ -1,0 +1,22 @@
+{
+  "name": "chat-example",
+  "version": "0.0.2",
+  "description": "a web chat room example with node.js and websocket",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xubeiyan/chat-example.git"
+  },
+  "author": "xubeiyan",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "latest"
+  },
+  "bugs": {
+    "url": "https://github.com/xubeiyan/chat-example/issues"
+  },
+  "homepage": "https://github.com/xubeiyan/chat-example#readme"
+}

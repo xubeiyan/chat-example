@@ -1,16 +1,10 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<title>WebSocket聊天例子</title>
-<script>
 window.addEventListener("load", function () {
-	var nickname = prompt("输入一个名字来聊天")
+	var nickname = 'yyd';
 	if (nickname) {
 		var connection = new WebSocket("ws://"+window.location.hostname+":8081")
 		connection.onopen = function () {
 			console.log("Connection opened")
-			connection.send(nickname)
+			connection.send('I am ' + nickname)
 			document.getElementById("form").onsubmit = function (event) {
 				var msg = document.getElementById("msg")
 				if (msg.value)
@@ -40,12 +34,3 @@ window.addEventListener("load", function () {
 		}
 	}
 })
-</script>
-</head>
-
-<body>
-<form id="form" style="position:fixed; left: 500px; bottom: 5px">
-发送的消息： <input size="50" id="msg"> <input type="submit" value="发送">
-</form>
-</body>
-</html>
