@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+div#messages-area {
+	width: calc(100% - 200px);
+	height: calc(100% - 100px);
+	background-color: #FFF;
+	display: inline-block;
+	float: left;
+}
+
+div#messages-area pre {
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+}
+
+div#users-list {
+	width: 200px;
+	height: 100%;
+	background-color: #EFE;
+	display: inline-block;
+	float: right;
+}
+
+div#send-area {
+	border-top: 1px solid #EEE;
+	width: calc(100% - 200px);
+	height: 99px;
+	float: left;
+	display: flex;
+}
+
+div#send-area textarea#send-message {
+	border: 0;
+	padding: 5px;
+	width: calc(100% - 210px);
+	height: calc(100% - 10px);
+
+}
+
+div#send-area button#send-button {
+	border: 0;
+	width: 200px;
+	line-height: 90px;
+	height: 99px;
+	background-color: #DDD;
+
+}
