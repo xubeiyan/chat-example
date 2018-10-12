@@ -3,25 +3,23 @@ var express = require('express')
 	http = require('http').Server(app),
 	io = require('socket.io')(http),
 	path = require('path'),
+	room = undefined,
 	rnd = require('./util/rnd.js'),
 	time = require('./util/time.js');
 	
 	
 var users = {};
-// app.get('/', function (req, res) {
-	// console.log(req.query);
-	// res.sendFile(__dirname + '/html/index.html');
-// });
 
 app.use(express.static(path.join(__dirname, 'html')));
+app.get('/:id', function (req, res) {
+	// console.log(req.params.id);
+	room = req.params.id;
+	res.sendFile(__dirname + '/html/index.html');
+});
 
 io.on('connect', function (socket) {
-	var roomid = rnd.rndRoomId(),
+	var roomid = room === undefined ? rnd.rndRoomId() : room,
 		username = rnd.rndUsername();
-		
-	if (socket.handshake.query.roomid != undefined && socket.handshake.query.roomid != 'undefined') {
-		roomid = socket.handshake.query.roomid;
-	}
 	
 	socket.join(roomid);
 	

@@ -17,7 +17,7 @@ var rnd = function () {
 		},
 		// 生成随机username
 		rndUsername: function () {
-			var firstName = ['Alice', 'Bob', 'Cathy'],
+			var firstName = ['Alice', 'Bob', 'Cathy', 'David', 'Elisa'],
 				lastName = ['Computer', 'Chair', 'Desk'],
 				rndFirst = Math.floor(firstName.length * Math.random()),
 				rndLast = Math.floor(lastName.length * Math.random());

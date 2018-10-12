@@ -8,7 +8,7 @@ body {
 div#messages-area {
 	width: calc(100% - 200px);
 	height: calc(100% - 100px);
-	background-color: #FFF;
+	background-color: #FEFEFE;
 	display: inline-block;
 	float: left;
 }
@@ -49,4 +49,12 @@ div#send-area button#send-button {
 	height: 99px;
 	background-color: #DDD;
 
+}
+
+pre.join {
+	color: #199f61;
+}
+
+pre.leave {
+	color: #bc6a6a;
 }

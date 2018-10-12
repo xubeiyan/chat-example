@@ -12,8 +12,12 @@ var messageArea = document.getElementById('messages-area'),
 		sendMessage.value = '';
 	},
 	// 增加一条消息
-	addMessage = function (text) {
-		messageArea.innerHTML += '<pre>' + text + '</pre>';
+	addMessage = function (text, className) {
+		if (className === undefined) {
+			messageArea.innerHTML += '<pre>' + text + '</pre>';
+		} else {
+			messageArea.innerHTML += '<pre class="' + className + '">' + text + '</pre>';
+		}
 	};
 
 var socket = io(window.location.search);
@@ -38,5 +42,10 @@ socket.on('chat message', function (msgObj) {
 
 socket.on('user join', function (msgObj) {
 	var text = '[' + msgObj.datetime + ']' + msgObj.content;
-	addMessage(text);
+	addMessage(text, 'join');
 });
+
+socket.on('user leave', function (msgObj) {
+	var text = '[' + msgObj.datetime + ']' + msgObj.content;
+	addMessage(text, 'leave');
+})
